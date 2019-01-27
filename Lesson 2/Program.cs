@@ -151,8 +151,8 @@ namespace Lesson_2
         {
             /*Понкратьев Евгений
              * Задание 1: Написать метод, возвращающий минимальное из трех чисел.*/
-            
-           #region Задача 1
+
+            #region Задача 1
             /*
            //int TIMER = 2;
            double a = 0, b = 0, c = 0;
@@ -169,8 +169,8 @@ namespace Lesson_2
            Console.WriteLine("*********************************************************************");
            //Sleep(TIMER);
            */
-           #endregion
-           
+            #endregion
+
             #region Задаиние 2
             /*Задание 2: Написать метод подсчета количества цифр числа.*//*
             string number = "";
@@ -203,43 +203,50 @@ namespace Lesson_2
              * если не прошел (Логин: root, Password: GeekBrains). Используя метод проверки логина и пароля, 
              * написать программу: пользователь вводит логин и пароль, программа пропускает его дальше или не пропускает. 
              * С помощью цикла do while ограничить ввод пароля тремя попытками.*/
-
-            string login, pass;
-            int attempt = 0;
-            bool flag = false;
-            ConsoleKeyInfo key;
-            Console.WriteLine("Выполнение задания 4.");
-            Console.WriteLine("Программа выполняет проверку логина и пароля.");
-            Sleep(1);
-            do
-            {
-                login = "";
-                pass="";
-                Console.Clear();
-                Console.Write("Введите логин: ");
-                login = Console.ReadLine();
-                Console.Write("Введите пароль: ");
-                key = InputPass(ref pass);
-                flag = CheckPass(login, pass);
-                attempt++;
-            } while (attempt<3 && flag==false);
-            if (flag==true)
-            {
-                Console.Clear();
-                Console.WriteLine("Данные введены верно. Вход выполнен.");
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Вы ввели не верный логин или пароль. \nВыход из программы...");
-            }
-            Console.WriteLine("*********************************************************************");
-            Console.ReadKey();
-
+            /*
+           string login, pass;
+           int attempt = 0;
+           bool flag = false;
+           ConsoleKeyInfo key;
+           Console.WriteLine("Выполнение задания 4.");
+           Console.WriteLine("Программа выполняет проверку логина и пароля.");
+           Sleep(5);
+           do
+           {
+               login = "";
+               pass="";
+               Console.Clear();
+               Console.Write("Введите логин: ");
+               login = Console.ReadLine();
+               Console.Write("Введите пароль: ");
+               key = InputPass(ref pass);
+               flag = CheckPass(login, pass);
+               attempt++;
+           } while (attempt<3 && flag==false);
+           if (flag==true)
+           {
+               Console.Clear();
+               Console.WriteLine("Данные введены верно. Вход выполнен.");
+           }
+           else
+           {
+               Console.Clear();
+               Console.WriteLine("Вы ввели не верный логин или пароль. \nВыход из программы...");
+           }
+           Console.WriteLine("*********************************************************************");
+           Console.ReadKey();
+           */
             #endregion
 
+            #region Задание 5
+            /* Задание 5: а) Написать программу, которая запрашивает массу и рост человека, 
+             * вычисляет его индекс массы и сообщает, нужно ли человеку похудеть, набрать вес или все в норме;
+             * б) *Рассчитать, на сколько кг похудеть или сколько кг набрать для нормализации веса. */
+
+
+            #endregion
         }
 
-        
+
     }
 }
