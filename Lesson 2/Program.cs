@@ -242,8 +242,37 @@ namespace Lesson_2
             /* Задание 5: а) Написать программу, которая запрашивает массу и рост человека, 
              * вычисляет его индекс массы и сообщает, нужно ли человеку похудеть, набрать вес или все в норме;
              * б) *Рассчитать, на сколько кг похудеть или сколько кг набрать для нормализации веса. */
-
-
+             /*
+            double growth = 0, weight = 0;
+            double normWeight = 0;
+            double imt = 0; //индекс массы тела
+            Console.WriteLine("*********************************************************************");
+            Console.WriteLine("Выполнение задания 5.");
+            Console.WriteLine("Программа подсчитывает индекс массы тела.");
+            Console.Write("Укажите свой рост (см): ");
+            growth = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Укажите свой вес (кг): ");
+            weight = Convert.ToDouble(Console.ReadLine());
+            //Вычисление индекса массы тела с выводом результатов
+            imt = weight / (Math.Pow(growth / 100, 2));
+            Console.WriteLine($"Индекс массы вашего тела равен {imt:0.00}");
+            if (imt>25)
+            {
+                normWeight = 25 * (Math.Pow(growth / 100, 2));
+                Console.WriteLine($"Ваш вес превышает норму, вам следует похудеть на {(weight-normWeight):0.0} кг.");
+            }
+            else if (imt<20)
+            {
+                normWeight = 20 * (Math.Pow(growth / 100, 2));
+                Console.WriteLine($"Ваш вес ниже нормы, вам нужно набрать {(normWeight-weight):0.0} кг.");
+            }
+            else
+            {
+                Console.WriteLine("Ваш вес в норме! Так держать...");
+            }
+            Console.WriteLine("*********************************************************************");
+            Console.ReadKey();
+            */
             #endregion
         }
 
