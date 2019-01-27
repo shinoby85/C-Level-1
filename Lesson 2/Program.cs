@@ -161,6 +161,23 @@ namespace Lesson_2
             return sum;
         }
 
+        /// <summary>
+        /// Поиск суммы чисел из промежутка значений
+        /// </summary>
+        /// <param name="a">Начало промежутка</param>
+        /// <param name="b">Конец промежутка</param>
+        /// <returns>Сумма значений</returns>
+        public static int RecMetod(int a, int b)
+        {
+            int sum = a;
+            Console.Write($"{a} ");
+            if (a != b)
+            {
+                sum += RecMetod(a + 1, b);
+            }
+            return sum;
+        }
+
 
         static void Main(string[] args)
         {
@@ -168,8 +185,8 @@ namespace Lesson_2
              * Задание 1: Написать метод, возвращающий минимальное из трех чисел.*/
 
             #region Задача 1
-            /*
-           //int TIMER = 2;
+            
+           
            double a = 0, b = 0, c = 0;
            Console.WriteLine("*********************************************************************");
            Console.WriteLine("Выполнение задания 1.");
@@ -182,12 +199,12 @@ namespace Lesson_2
            c = Convert.ToDouble(Console.ReadLine());
            Console.WriteLine($"Минимальное число: {MinNumber(a, b, c)}");
            Console.WriteLine("*********************************************************************");
-           //Sleep(TIMER);
-           */
+           
+           
             #endregion
 
             #region Задаиние 2
-            /*Задание 2: Написать метод подсчета количества цифр числа.*//*
+            /*Задание 2: Написать метод подсчета количества цифр числа.*/
             string number = "";
             Console.WriteLine("Выполнение задания 2.");
             Console.WriteLine("В вашем числе будет произведен подсчет количества цифр. ");
@@ -195,13 +212,13 @@ namespace Lesson_2
             number = Console.ReadLine();
             ColNumber(number);
             Console.WriteLine("*********************************************************************");
-            Console.ReadKey();*/
+            Console.ReadKey();
             #endregion
 
 
             #region Задание 3:
             /*Задание 3: С клавиатуры вводятся числа, пока не будет введен 0. 
-             * Подсчитать сумму всех нечетных положительных чисел.*//*
+             * Подсчитать сумму всех нечетных положительных чисел.*/
             Console.WriteLine("Выполнение задания 3.");
             Console.WriteLine("Программа подсчитывает количество введенных нечетных чисел. \n" +
                 "Для выхода с программы введите '0'");
@@ -209,7 +226,7 @@ namespace Lesson_2
             colOddNumber = NewMethod(colOddNumber);
             Console.WriteLine($"Было введено {colOddNumber} нечетных чисел.");
             Console.WriteLine("*********************************************************************");
-            Console.ReadKey();*/
+            Console.ReadKey();
             #endregion
 
             #region Задание 4
@@ -218,7 +235,7 @@ namespace Lesson_2
              * если не прошел (Логин: root, Password: GeekBrains). Используя метод проверки логина и пароля, 
              * написать программу: пользователь вводит логин и пароль, программа пропускает его дальше или не пропускает. 
              * С помощью цикла do while ограничить ввод пароля тремя попытками.*/
-            /*
+            
            string login, pass;
            int attempt = 0;
            bool flag = false;
@@ -250,14 +267,14 @@ namespace Lesson_2
            }
            Console.WriteLine("*********************************************************************");
            Console.ReadKey();
-           */
+           
             #endregion
 
             #region Задание 5
             /* Задание 5: а) Написать программу, которая запрашивает массу и рост человека, 
              * вычисляет его индекс массы и сообщает, нужно ли человеку похудеть, набрать вес или все в норме;
              * б) *Рассчитать, на сколько кг похудеть или сколько кг набрать для нормализации веса. */
-            /*
+            
            double growth = 0, weight = 0;
            double normWeight = 0;
            double imt = 0; //индекс массы тела
@@ -287,7 +304,7 @@ namespace Lesson_2
            }
            Console.WriteLine("*********************************************************************");
            Console.ReadKey();
-           */
+           
             #endregion
 
             #region Задание 6
@@ -295,32 +312,57 @@ namespace Lesson_2
             /* Задание 6: *Написать программу подсчета количества «Хороших» чисел в диапазоне 
              * от 1 до 1 000 000 000. Хорошим называется число, которое делится на сумму своих цифр. 
              * Реализовать подсчет времени выполнения программы, используя структуру DateTime.*/
-             /*
-            DateTime start = DateTime.Now;
-            Console.WriteLine("*********************************************************************");
-            Console.WriteLine("Выполнение задания 6.");
-            Console.WriteLine("Программа подсчета количества хороших чисел.");
-            int inexGoodNumber = 0; //Счетчик количества хороших чисел
-            for (int i = 1; i < 1000000000; i++)
-            {
-                if (i%sumNumber(i)==0)
-                {
-                    inexGoodNumber++;
-                }
+            
+           DateTime start = DateTime.Now;
+           Console.WriteLine("*********************************************************************");
+           Console.WriteLine("Выполнение задания 6.");
+           Console.WriteLine("Программа подсчета количества хороших чисел.");
+           int inexGoodNumber = 0; //Счетчик количества хороших чисел
+           for (int i = 1; i <= 1000000000; i++)
+           {
+               if (i%sumNumber(i)==0)
+               {
+                   inexGoodNumber++;
+               }
 
-            }
-            Console.WriteLine($"В интервале 1-1 000 000 000 существует {inexGoodNumber} хороших чисел.");
-            Console.WriteLine($"На работу программы потрачено времени: {DateTime.Now-start}");
-            Console.WriteLine("*********************************************************************");
-            Console.ReadKey();
-            */
+           }
+           Console.WriteLine($"В интервале 1-1 000 000 000 существует {inexGoodNumber} хороших чисел.");
+           Console.WriteLine($"На работу программы потрачено времени: {DateTime.Now-start}");
+           Console.WriteLine("*********************************************************************");
+           Console.ReadKey();
+           
             #endregion
 
+            #region Задание 7
+            /* Задание 7: a) Разработать рекурсивный метод, который выводит на экран числа от a до b (a<b);
+             * б) *Разработать рекурсивный метод, который считает сумму чисел от a до b.*/
+            Console.WriteLine("*********************************************************************");
+            Console.WriteLine("Выполнение задания 7.");
+            Console.WriteLine("Рекурсивный метод с подсчетом суммы чисел от А до В с их выводом.");
+            int a1, b1;
+            int recSum=0;
+            Console.Write("Введите значение числа А: ");
+            a1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите значение числа B: ");
+            b1 = Convert.ToInt32(Console.ReadLine());
+            if (b1<a1)
+            {
+                int c1 = a1;
+                a1 = b1;
+                b1 = c1;
+            }
+            Console.Write("Вывод чисел промежутка: ");
+            recSum = RecMetod(a1, b1);
+            Console.WriteLine($"\nСумма чисел от А до В равна {recSum}.");
+            Console.WriteLine("*********************************************************************");
+            Console.ReadKey();
+
+            #endregion
 
 
 
         }
 
-
+        
     }
 }
