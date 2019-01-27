@@ -72,6 +72,30 @@ namespace Lesson_2
             
 
         }
+        
+        /// <summary>
+        /// Выполняет подсчет количества нечетных чисел
+        /// </summary>
+        /// <param name="colOddNumber">Передача начального значения счетчика</param>
+        /// <returns>Возврат количества нечетных чисел</returns>
+        private static int NewMethod(int colOddNumber)
+        {
+            while (true)
+            {
+                int num = Convert.ToInt32(Console.ReadLine());
+                if (num == 0)
+                {
+                    break;
+                }
+                if (num % 2 != 0)
+                {
+                    colOddNumber++;
+                }
+            }
+
+            return colOddNumber;
+        }
+
 
         static void Main(string[] args)
         {
@@ -104,17 +128,24 @@ namespace Lesson_2
             number = Console.ReadLine();
             ColNumber(number);
             Console.WriteLine("*********************************************************************");
-            Console.ReadKey();
+            Console.ReadKey();*/
             #endregion
-            */
             
+
             #region Задание 3:
             /*Задание 3: С клавиатуры вводятся числа, пока не будет введен 0. 
-             * Подсчитать сумму всех нечетных положительных чисел.*/
-
-
+             * Подсчитать сумму всех нечетных положительных чисел.*//*
+            Console.WriteLine("Выполнение задания 3.");
+            Console.WriteLine("Программа подсчитывает количество введенных нечетных чисел. \n" +
+                "Для выхода с программы введите '0'");
+            int colOddNumber = 0;
+            colOddNumber = NewMethod(colOddNumber);
+            Console.WriteLine($"Было введено {colOddNumber} нечетных чисел.");
+            Console.WriteLine("*********************************************************************");
+            Console.ReadKey();*/
             #endregion
 
-}
-}
+        }
+
+    }
 }
