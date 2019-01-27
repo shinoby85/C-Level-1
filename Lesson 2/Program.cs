@@ -78,7 +78,7 @@ namespace Lesson_2
         /// </summary>
         /// <param name="colOddNumber">Передача начального значения счетчика</param>
         /// <returns>Возврат количества нечетных чисел</returns>
-        private static int NewMethod(int colOddNumber)
+        public static int NewMethod(int colOddNumber)
         {
             while (true)
             {
@@ -96,13 +96,64 @@ namespace Lesson_2
             return colOddNumber;
         }
 
+        /// <summary>
+        /// Проверка корректности логина и пароля
+        /// </summary>
+        /// <param name="login">Передача значения логина</param>
+        /// <param name="pass">Передача значения пароля</param>
+        /// <returns>Результат проверки пароля</returns>
+        public static bool CheckPass(string login, string pass)
+        {
+            if (login== "root" && pass== "GeekBrains")
+            {                
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Вводимые с клавиатуры данные отображает ввиде *
+        /// </summary>
+        /// <param name="pass">Начальное значение строки</param>
+        /// <returns>Возврат конечного значения</returns>
+        private static ConsoleKeyInfo InputPass(ref string pass)
+        {
+            ConsoleKeyInfo key;
+            key = Console.ReadKey(true); //Не отображать вводимые с клавиатуры символы
+            while (key.Key != ConsoleKey.Enter)
+            {
+                if (key.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("*");
+                    pass += key.KeyChar;
+                }
+                else if (key.Key == ConsoleKey.Backspace)
+                {
+                    if (!string.IsNullOrEmpty(pass))
+                    {
+                        //Удаляет один символ из строки пароля
+                        pass = pass.Substring(0, pass.Length - 1);
+                        int cursorPosition = Console.CursorLeft;//задает позицию курсора
+                        Console.SetCursorPosition(cursorPosition - 1, Console.CursorTop);
+                        Console.Write(" ");
+                        Console.SetCursorPosition(cursorPosition - 1, Console.CursorTop);
+                    }
+                }
+                key = Console.ReadKey(true);
+            }
+            Console.WriteLine();
+            return key;
+        }
+
+
 
         static void Main(string[] args)
         {
             /*Понкратьев Евгений
              * Задание 1: Написать метод, возвращающий минимальное из трех чисел.*/
-            /*
+            
            #region Задача 1
+            /*
            //int TIMER = 2;
            double a = 0, b = 0, c = 0;
            Console.WriteLine("*********************************************************************");
@@ -117,8 +168,9 @@ namespace Lesson_2
            Console.WriteLine($"Минимальное число: {MinNumber(a, b, c)}");
            Console.WriteLine("*********************************************************************");
            //Sleep(TIMER);
-           #endregion
            */
+           #endregion
+           
             #region Задаиние 2
             /*Задание 2: Написать метод подсчета количества цифр числа.*//*
             string number = "";
@@ -130,7 +182,7 @@ namespace Lesson_2
             Console.WriteLine("*********************************************************************");
             Console.ReadKey();*/
             #endregion
-            
+
 
             #region Задание 3:
             /*Задание 3: С клавиатуры вводятся числа, пока не будет введен 0. 
@@ -145,7 +197,49 @@ namespace Lesson_2
             Console.ReadKey();*/
             #endregion
 
+            #region Задание 4
+            /* Задание 4: Реализовать метод проверки логина и пароля. 
+             * На вход подается логин и пароль. На выходе истина, если прошел авторизацию, и ложь, 
+             * если не прошел (Логин: root, Password: GeekBrains). Используя метод проверки логина и пароля, 
+             * написать программу: пользователь вводит логин и пароль, программа пропускает его дальше или не пропускает. 
+             * С помощью цикла do while ограничить ввод пароля тремя попытками.*/
+
+            string login, pass;
+            int attempt = 0;
+            bool flag = false;
+            ConsoleKeyInfo key;
+            Console.WriteLine("Выполнение задания 4.");
+            Console.WriteLine("Программа выполняет проверку логина и пароля.");
+            Sleep(1);
+            do
+            {
+                login = "";
+                pass="";
+                Console.Clear();
+                Console.Write("Введите логин: ");
+                login = Console.ReadLine();
+                Console.Write("Введите пароль: ");
+                key = InputPass(ref pass);
+                flag = CheckPass(login, pass);
+                attempt++;
+            } while (attempt<3 && flag==false);
+            if (flag==true)
+            {
+                Console.Clear();
+                Console.WriteLine("Данные введены верно. Вход выполнен.");
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Вы ввели не верный логин или пароль. \nВыход из программы...");
+            }
+            Console.WriteLine("*********************************************************************");
+            Console.ReadKey();
+
+            #endregion
+
         }
 
+        
     }
 }
