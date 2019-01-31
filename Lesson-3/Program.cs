@@ -145,13 +145,49 @@ namespace Lesson_3
 
     class Program
     {
+
+        /// <summary>
+        /// Выполняет подсчет количества нечетных чисел и их суммы
+        /// </summary>
+        /// <param name="colOddNumber">Передача начального значения счетчика</param>
+        /// <returns>Возврат суммы нечетных чисел</returns>
+        public static List<int> SumNumber(ref int colOddNumber, ref int sum)
+        {
+            List<int> mas=new List<int>();
+            int i = 0;
+            while (true)
+            {
+                Console.Clear();
+                Console.Write("Введите число: ");
+                if (Int32.TryParse(Console.ReadLine(), out int num) && num > 0)
+                {
+                    if (num % 2 != 0)
+                    {
+                        mas.Add(num);
+                        sum += num;
+                        colOddNumber++;
+                        i++;
+                    }
+                }
+                else if (num == 0) break; 
+                else
+                {
+                    Console.WriteLine("Введенные данные не корректны. Повторите ввод.");
+                }
+            }
+
+            return mas;
+        }
+
         static void Main(string[] args)
         {
+            
+            #region Задание 1
             /*Понкратьев Евгений
              * Задание 1: а) Дописать структуру Complex, добавив метод вычитания комплексных чисел. 
              * Продемонстрировать работу структуры.
              * б) Дописать класс Complex, добавив методы вычитания и произведения чисел. Проверить работу класса.
-             * в) Добавить диалог с использованием switch демонстрирующий работу класса.*/
+             * в) Добавить диалог с использованием switch демонстрирующий работу класса.*//*
             Complex complex1;
             complex1.re = 1;
             complex1.im = 1;
@@ -199,15 +235,35 @@ namespace Lesson_3
                 Console.ReadKey();
             }
             while (ind < 1 || ind > 4);
+            */
+            #endregion
 
+            #region Задание 2
             /* Задание 2: а) С клавиатуры вводятся числа, пока не будет введен 0 (каждое число в новой строке). 
              * Требуется подсчитать сумму всех нечетных положительных чисел. Сами числа и сумму вывести на экран, 
              * используя tryParse;
              * б) Добавить обработку исключительных ситуаций на то, что могут быть введены некорректные данные. 
              * При возникновении ошибки вывести сообщение. Напишите соответствующую функцию;*/
 
+            Console.WriteLine("Программа выполняет подсчет суммы положительных не четных чисел.");
+            Console.WriteLine("Введенная строка приравнивается к нулю.");
+            Console.ReadKey();
+            int schet = 0, sum=0;
+            List<int> mas= SumNumber(ref schet, ref sum);
+            Console.WriteLine($"Сумма нечетных чисел равна: {sum}");
+            Console.WriteLine($"Всего введено {schet} чисел.");
+            Console.Write("Список чисел: ");
+            foreach (var item in mas)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.ReadKey();
+            
 
 
+
+
+            #endregion
 
 
 
