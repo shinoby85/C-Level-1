@@ -35,17 +35,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lOperation = new System.Windows.Forms.Label();
             this.lZnak = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tChisl1 = new System.Windows.Forms.TextBox();
+            this.tZnam1 = new System.Windows.Forms.TextBox();
+            this.tChisl2 = new System.Windows.Forms.TextBox();
+            this.tZnam2 = new System.Windows.Forms.TextBox();
+            this.tChislRez = new System.Windows.Forms.TextBox();
+            this.tZnamRez = new System.Windows.Forms.TextBox();
             this.bSumm = new System.Windows.Forms.Button();
             this.bRazn = new System.Windows.Forms.Button();
             this.bProizv = new System.Windows.Forms.Button();
             this.bDelen = new System.Windows.Forms.Button();
             this.bExit = new System.Windows.Forms.Button();
+            this.lCel1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -110,47 +111,49 @@
             this.lZnak.Size = new System.Drawing.Size(0, 13);
             this.lZnak.TabIndex = 6;
             // 
-            // textBox1
+            // tChisl1
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(43, 20);
-            this.textBox1.TabIndex = 7;
+            this.tChisl1.Location = new System.Drawing.Point(46, 52);
+            this.tChisl1.Name = "tChisl1";
+            this.tChisl1.Size = new System.Drawing.Size(43, 20);
+            this.tChisl1.TabIndex = 7;
             // 
-            // textBox2
+            // tZnam1
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 20);
-            this.textBox2.TabIndex = 8;
+            this.tZnam1.Location = new System.Drawing.Point(46, 91);
+            this.tZnam1.Name = "tZnam1";
+            this.tZnam1.Size = new System.Drawing.Size(43, 20);
+            this.tZnam1.TabIndex = 8;
             // 
-            // textBox3
+            // tChisl2
             // 
-            this.textBox3.Location = new System.Drawing.Point(139, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(43, 20);
-            this.textBox3.TabIndex = 9;
+            this.tChisl2.Location = new System.Drawing.Point(139, 52);
+            this.tChisl2.Name = "tChisl2";
+            this.tChisl2.Size = new System.Drawing.Size(43, 20);
+            this.tChisl2.TabIndex = 9;
             // 
-            // textBox4
+            // tZnam2
             // 
-            this.textBox4.Location = new System.Drawing.Point(139, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(43, 20);
-            this.textBox4.TabIndex = 10;
+            this.tZnam2.Location = new System.Drawing.Point(139, 91);
+            this.tZnam2.Name = "tZnam2";
+            this.tZnam2.Size = new System.Drawing.Size(43, 20);
+            this.tZnam2.TabIndex = 10;
             // 
-            // textBox5
+            // tChislRez
             // 
-            this.textBox5.Location = new System.Drawing.Point(256, 52);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(43, 20);
-            this.textBox5.TabIndex = 11;
+            this.tChislRez.Enabled = false;
+            this.tChislRez.Location = new System.Drawing.Point(256, 52);
+            this.tChislRez.Name = "tChislRez";
+            this.tChislRez.Size = new System.Drawing.Size(43, 20);
+            this.tChislRez.TabIndex = 11;
             // 
-            // textBox6
+            // tZnamRez
             // 
-            this.textBox6.Location = new System.Drawing.Point(256, 91);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(43, 20);
-            this.textBox6.TabIndex = 12;
+            this.tZnamRez.Enabled = false;
+            this.tZnamRez.Location = new System.Drawing.Point(256, 91);
+            this.tZnamRez.Name = "tZnamRez";
+            this.tZnamRez.Size = new System.Drawing.Size(43, 20);
+            this.tZnamRez.TabIndex = 12;
             // 
             // bSumm
             // 
@@ -170,6 +173,7 @@
             this.bRazn.TabIndex = 14;
             this.bRazn.Text = "Разность";
             this.bRazn.UseVisualStyleBackColor = true;
+            this.bRazn.Click += new System.EventHandler(this.bRazn_Click);
             // 
             // bProizv
             // 
@@ -179,6 +183,7 @@
             this.bProizv.TabIndex = 15;
             this.bProizv.Text = "Умножить";
             this.bProizv.UseVisualStyleBackColor = true;
+            this.bProizv.Click += new System.EventHandler(this.bProizv_Click);
             // 
             // bDelen
             // 
@@ -188,6 +193,7 @@
             this.bDelen.TabIndex = 16;
             this.bDelen.Text = "Деление";
             this.bDelen.UseVisualStyleBackColor = false;
+            this.bDelen.Click += new System.EventHandler(this.bDelen_Click);
             // 
             // bExit
             // 
@@ -197,23 +203,34 @@
             this.bExit.TabIndex = 17;
             this.bExit.Text = "Выход";
             this.bExit.UseVisualStyleBackColor = true;
+            this.bExit.Click += new System.EventHandler(this.bExit_Click);
+            // 
+            // lCel1
+            // 
+            this.lCel1.AutoSize = true;
+            this.lCel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lCel1.Location = new System.Drawing.Point(223, 66);
+            this.lCel1.Name = "lCel1";
+            this.lCel1.Size = new System.Drawing.Size(0, 26);
+            this.lCel1.TabIndex = 18;
             // 
             // dataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 309);
+            this.Controls.Add(this.lCel1);
             this.Controls.Add(this.bExit);
             this.Controls.Add(this.bDelen);
             this.Controls.Add(this.bProizv);
             this.Controls.Add(this.bRazn);
             this.Controls.Add(this.bSumm);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tZnamRez);
+            this.Controls.Add(this.tChislRez);
+            this.Controls.Add(this.tZnam2);
+            this.Controls.Add(this.tChisl2);
+            this.Controls.Add(this.tZnam1);
+            this.Controls.Add(this.tChisl1);
             this.Controls.Add(this.lZnak);
             this.Controls.Add(this.lOperation);
             this.Controls.Add(this.label5);
@@ -237,16 +254,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lOperation;
         private System.Windows.Forms.Label lZnak;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tChisl1;
+        private System.Windows.Forms.TextBox tZnam1;
+        private System.Windows.Forms.TextBox tChisl2;
+        private System.Windows.Forms.TextBox tZnam2;
+        private System.Windows.Forms.TextBox tChislRez;
+        private System.Windows.Forms.TextBox tZnamRez;
         private System.Windows.Forms.Button bSumm;
         private System.Windows.Forms.Button bRazn;
         private System.Windows.Forms.Button bProizv;
         private System.Windows.Forms.Button bDelen;
         private System.Windows.Forms.Button bExit;
+        private System.Windows.Forms.Label lCel1;
     }
 }
