@@ -35,8 +35,6 @@ namespace Lesson_4
                 }
             }
         }
-
-
         /// <summary>
         /// Конструктор считывает данные из файла и заносит их в массив
         /// </summary>
@@ -83,5 +81,43 @@ namespace Lesson_4
             var matr = str.Split(' ');
             return int.Parse(matr[ind]);
         }
+        /// <summary>
+        /// Осуществляет подсчет суммы элементов массива
+        /// </summary>
+        /// <returns>Возвращает сумму элементов массива</returns>
+        public int matrSum()
+        {
+            int sum = 0;
+            for (int i = 0; i <matr.GetLength(0) ; i++)
+            {
+                for (int j = 0; j < matr.GetLength(1); j++)
+                {
+                    sum += matr[i, j];
+                }
+            }
+            return sum;
+        }
+        /// <summary>
+        /// Возврат суммы элементов массива которые больше указанного значения
+        /// </summary>
+        /// <param name="number">Число, от значения которого будет происходить отбор</param>
+        /// <returns>Результат сложения чисел с учетом критерия</returns>
+        public int matrSum(int number)
+        {
+            int sum = 0;
+            for (int i = 0; i < matr.GetLength(0); i++)
+            {
+                for (int j = 0; j < matr.GetLength(1); j++)
+                {
+                    if (matr[i, j]>=number)
+                    {
+                        sum += matr[i, j];
+                    }                    
+                }
+            }
+            return sum;
+        }
+
+
     }
 }
