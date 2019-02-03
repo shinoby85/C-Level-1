@@ -17,6 +17,27 @@ namespace Lesson_4
             set { matr[ind1,ind2] = value; }
         }
         /// <summary>
+        /// Конструктор для инициализации двумерного массива случайными числами
+        /// </summary>
+        /// <param name="n">Количество строк массива</param>
+        /// <param name="m">Количество столбцов</param>
+        /// <param name="min">Нижняя граница для генерации случайных чисел</param>
+        /// <param name="max">Верхняя граница для генерации случайных чисел</param>
+        public Matr(int n, int m,int min,int max)
+        {
+            Random rnd = new Random();
+            matr = new int[n, m];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    matr[i, j] = rnd.Next(min, max);
+                }
+            }
+        }
+
+
+        /// <summary>
         /// Конструктор считывает данные из файла и заносит их в массив
         /// </summary>
         /// <param name="fileName">Имя файла, с которого происходит считывание</param>
