@@ -17,6 +17,49 @@ namespace Lesson_4
             set { matr[ind1,ind2] = value; }
         }
         /// <summary>
+        /// Свойство возвращает минимальный элемент массива
+        /// </summary>
+        public int Min
+        {
+            get
+            {
+                int min=matr[0,0];
+                for (int i = 0; i < matr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < matr.GetLength(1); j++)
+                    {
+                        if (matr[i,j]<min)
+                        {
+                            min = matr[i, j];
+                        }
+
+                    }
+                }
+                return min;
+            }
+        }
+        /// <summary>
+        /// Свойство возвращвет максимальный элемент массива
+        /// </summary>
+        public int Max
+        {
+            get
+            {
+                int max = matr[0, 0];
+                for (int i = 0; i < matr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < matr.GetLength(1); j++)
+                    {
+                        if (matr[i, j] > max)
+                        {
+                            max = matr[i, j];
+                        }
+                    }
+                }
+                return max;
+            }
+        }
+        /// <summary>
         /// Конструктор для инициализации двумерного массива случайными числами
         /// </summary>
         /// <param name="n">Количество строк массива</param>
