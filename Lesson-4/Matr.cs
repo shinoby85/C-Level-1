@@ -59,6 +59,10 @@ namespace Lesson_4
                 return max;
             }
         }
+        public void IndexMax(ref int indI, ref int indJ)
+        {
+
+        }
         /// <summary>
         /// Конструктор для инициализации двумерного массива случайными числами
         /// </summary>
