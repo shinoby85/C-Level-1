@@ -28,8 +28,10 @@ namespace Lesson_4
             int indI, indJ;
             matrix.IndexMax(out indI,out indJ);
             Console.WriteLine($"В матрице Matrix максимальный элемент имеет позицию [{indI},{indJ}]");
+            matrix.WriteToFile("matrix.txt");
             matrix1.IndexMax(out indI, out indJ);
             Console.WriteLine($"В матрице Matrix1 максимальный элемент имеет позицию [{indI},{indJ}]");
+            matrix1.WriteToFile("matrix1.txt");
             Console.ReadKey();
         }
     }

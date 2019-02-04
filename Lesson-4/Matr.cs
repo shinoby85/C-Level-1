@@ -128,6 +128,31 @@ namespace Lesson_4
             }
         }
         /// <summary>
+        /// Запись матрицы в файл
+        /// </summary>
+        /// <param name="fileName">Имя файла</param>
+        public void WriteToFile(string fileName)
+        {
+            try
+            {
+                StreamWriter rw = new StreamWriter("..\\..\\" + fileName);
+                for (int i = 0; i < matr.GetLength(0); i++)
+                {
+                    for (int j = 0; j < matr.GetLength(1); j++)
+                    {
+                        rw.Write(matr[i, j] + " ");
+                    }
+                    rw.Write("\n");
+                }
+                rw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
+        }
+        /// <summary>
         /// Выполняет подсчет количества элементов в строке
         /// </summary>
         /// <param name="str">Передаваемая строка</param>
