@@ -59,9 +59,28 @@ namespace Lesson_4
                 return max;
             }
         }
-        public void IndexMax(ref int indI, ref int indJ)
+        /// <summary>
+        /// Осуществляет поиск индексов максимального элемента массива
+        /// </summary>
+        /// <param name="indI">Номер строки максимального элемента</param>
+        /// <param name="indJ">Номер столбца максимального элемента</param>
+        public void IndexMax(out int indI, out int indJ)
         {
-
+            indI = 0;
+            indJ = 0;
+            int maxElem = matr[0, 0];
+            for (int i = 0; i < matr.GetLength(0); i++)
+            {
+                for (int j = 0; j < matr.GetLength(1); j++)
+                {
+                    if (maxElem<matr[i,j])
+                    {
+                        maxElem = matr[i, j];
+                        indI = i;
+                        indJ = j;
+                    }
+                }
+            }
         }
         /// <summary>
         /// Конструктор для инициализации двумерного массива случайными числами

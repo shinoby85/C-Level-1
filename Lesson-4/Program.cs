@@ -25,7 +25,12 @@ namespace Lesson_4
 
             Matr matrix = new Matr("inputArry.txt");
             Matr matrix1 = new Matr(4, 5, -150, 150);
-
+            int indI, indJ;
+            matrix.IndexMax(out indI,out indJ);
+            Console.WriteLine($"В матрице Matrix максимальный элемент имеет позицию [{indI},{indJ}]");
+            matrix1.IndexMax(out indI, out indJ);
+            Console.WriteLine($"В матрице Matrix1 максимальный элемент имеет позицию [{indI},{indJ}]");
+            Console.ReadKey();
         }
     }
 }
