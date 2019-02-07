@@ -41,9 +41,11 @@ namespace Lesson_5
              * в) Найти самое длинное слово сообщения.
              * г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
              * Продемонстрируйте работу программы на текстовом файле с вашей программой.*/
-
-
-
+            Console.Write("Введите текст для анализа: ");
+            Message dataText =new Message(Console.ReadLine().ToString());
+            Console.Write("Введите длину слова: ");
+            int num = int.Parse(Console.ReadLine());
+            dataText.OutpuData(num);
 
 
 

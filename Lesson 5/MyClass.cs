@@ -64,4 +64,32 @@ namespace Lesson_5
 
         
     }
+    class Message
+    {
+        private static string myString;
+
+        public Message(string str)
+        {
+            myString = str;
+        }
+
+        /// <summary>
+        /// Вывод слоа с сообщением в тексте до n символов
+        /// </summary>
+        /// <param name="num">Требуемая ширина слов</param>
+        public void OutpuData(int num)
+        {
+            string regular = @"\b[a-zA-z]{1," + num.ToString()+ @"}\b";
+            Regex myReq = new Regex(regular);
+            MatchCollection outData = myReq.Matches(myString);
+            foreach (var item in outData)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            
+                
+            
+        }
+
+    }
 }
