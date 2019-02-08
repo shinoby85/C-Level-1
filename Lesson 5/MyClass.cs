@@ -90,6 +90,20 @@ namespace Lesson_5
                 
             
         }
+        /// <summary>
+        /// Удаляет слово из строки если оно заканчивается на указанный символ
+        /// </summary>
+        /// <param name="ch">Символ конца слова</param>
+        public void DeleteWord (char ch)
+        {
+            string serchRegular = @"(\s|\b)[a-zA-Z0-9]{1,}"+ch.ToString()+@"(\b|\s)";
+            Regex serch = new Regex(serchRegular);
+
+            string result = Regex.Replace(myString, serchRegular, String.Empty);
+            Console.WriteLine(result.ToString());
+
+
+        }
 
     }
 }

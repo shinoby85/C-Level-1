@@ -34,20 +34,22 @@ namespace Lesson_5
             {
                 Console.WriteLine("Данные не совпали при ручном анализе.");
             }
-
+            Console.ReadKey();
             /*Задание 2: Разработать класс Message, содержащий следующие статические методы для обработки текста:
              * а) Вывести только те слова сообщения, которые содержат не более n букв.
              * б) Удалить из сообщения все слова, которые заканчиваются на заданный символ.
              * в) Найти самое длинное слово сообщения.
              * г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
              * Продемонстрируйте работу программы на текстовом файле с вашей программой.*/
+            Console.Clear();
             Console.Write("Введите текст для анализа: ");
             Message dataText =new Message(Console.ReadLine().ToString());
             Console.Write("Введите длину слова: ");
             int num = int.Parse(Console.ReadLine());
             dataText.OutpuData(num);
-
-
+            Console.Write("Введите символ разделители: ");
+            dataText.DeleteWord(Convert.ToChar(Console.ReadLine()));
+            
 
 
             Console.ReadKey();
