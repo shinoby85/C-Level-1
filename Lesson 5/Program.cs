@@ -52,7 +52,7 @@ namespace Lesson_5
             dataText.DeleteWord(Convert.ToChar(Console.ReadLine()));
             dataText.ReadFile("freeText.txt");
             Console.WriteLine($"Максимальное слово в строке: {dataText.MaxWord}");
-            
+            dataText.MasMaxWord();
             Console.ReadKey();
         }
     }

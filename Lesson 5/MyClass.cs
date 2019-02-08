@@ -69,10 +69,13 @@ namespace Lesson_5
     {
         private static string myString;
         private static string fileString;
+        private static int indMaxElem;
 
         public Message(string str)
         {
             myString = str;
+            fileString = null;
+            indMaxElem = 0;
         }
 
         /// <summary>
@@ -115,6 +118,7 @@ namespace Lesson_5
             StreamReader rf = new StreamReader("..\\..\\"+fileName);
             fileString = rf.ReadLine();
         }
+
         /// <summary>
         /// Указывает максимальное слово в строке
         /// </summary>
@@ -132,9 +136,30 @@ namespace Lesson_5
                     }
                     
                 }
+                indMaxElem = index;
                 return str[index];
             }
         }
-
+        /// <summary>
+        /// Формирование строки из максимальных по длине слов
+        /// </summary>
+        public void MasMaxWord()
+        {
+            string[] str = fileString.Split(new Char[] { ' ', ',', '.', ':', '!', '?', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            StringBuilder mas = new StringBuilder();
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (str[indMaxElem].Length == str[i].Length)
+                {
+                    mas.Append(str[i]);
+                }
+            }
+            Console.Write("Самые длинные слова в строке:");
+            for (int i = 0; i < mas.Length; i++)
+            {
+                Console.Write($" {mas[i]}");
+            }
+           //return true;
+        }
     }
 }
