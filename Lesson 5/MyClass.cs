@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Lesson_5
 {
@@ -67,6 +68,7 @@ namespace Lesson_5
     class Message
     {
         private static string myString;
+        private static string fileString;
 
         public Message(string str)
         {
@@ -103,6 +105,35 @@ namespace Lesson_5
             Console.WriteLine(result.ToString());
 
 
+        }
+        /// <summary>
+        /// Читает содержимое текстового файла
+        /// </summary>
+        /// <param name="fileName">Имя файла</param>
+        public void ReadFile(string fileName)
+        {
+            StreamReader rf = new StreamReader("..\\..\\"+fileName);
+            fileString = rf.ReadLine();
+        }
+        /// <summary>
+        /// Указывает максимальное слово в строке
+        /// </summary>
+        public string MaxWord
+        {
+            get
+            {
+                string[] str = fileString.Split(new Char[] { ' ', ',', '.', ':', '!', '?', ';' }, StringSplitOptions.RemoveEmptyEntries);
+                int index = 0;
+                for (int i = 0; i < str.Length-1; i++)
+                {
+                    if (str[index].Length<str[i+1].Length)
+                    {
+                        index = i+1;
+                    }
+                    
+                }
+                return str[index];
+            }
         }
 
     }

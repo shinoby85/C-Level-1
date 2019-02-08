@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Lesson_5
 {
@@ -49,9 +50,9 @@ namespace Lesson_5
             dataText.OutpuData(num);
             Console.Write("Введите символ разделители: ");
             dataText.DeleteWord(Convert.ToChar(Console.ReadLine()));
+            dataText.ReadFile("freeText.txt");
+            Console.WriteLine($"Максимальное слово в строке: {dataText.MaxWord}");
             
-
-
             Console.ReadKey();
         }
     }
