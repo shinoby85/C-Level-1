@@ -10,6 +10,7 @@ namespace Lesson_6
     public delegate double DataFunc(double arg);
     class DoubleBinary
     {
+        
         /// <summary>
         /// Реализация функции 3
         /// </summary>
@@ -45,7 +46,7 @@ namespace Lesson_6
                 double x = a;
                 while (x <= b)
                 {
-                    bw.Write(MyFunk(x));
+                   bw.Write(MyFunk(x));
                     x += h;// x=x+h;
                 }
                 bw.Close();

@@ -77,7 +77,7 @@ namespace Lesson_6
              * в) *Переделайте функцию Load, чтобы она возвращала массив считанных значений. 
              * Пусть она возвращает минимум через параметр.*/
             double ax, bx, h;
-            
+            List<DataFunc> MyFunkF = new List<DataFunc>() { DoubleBinary.F, DoubleBinary.F1, DoubleBinary.F2 };
             Console.Write("Введите промежуток, на котором произойдет выборка значсений: ");
             Console.Write("AX: ");
             ax=Convert.ToDouble(Console.ReadLine());
@@ -98,34 +98,20 @@ namespace Lesson_6
             switch (reg)
             {
                 case 1:
-                    DoubleBinary.SaveFunc(DoubleBinary.F, ax, bx, h);
-                    Console.WriteLine($"Минимальное значение: {DoubleBinary.Load()}");
+                    DoubleBinary.SaveFunc(MyFunkF[0], ax, bx, h);
                     break;
                 case 2:
-                    DoubleBinary.SaveFunc(DoubleBinary.F1, ax, bx, h);
-                    Console.WriteLine($"Минимальное значение: {DoubleBinary.Load()}");
+                    DoubleBinary.SaveFunc(MyFunkF[1], ax, bx, h);
                     break;
                 case 3:
-                    DoubleBinary.SaveFunc(DoubleBinary.F2, ax, bx, h);
-                    Console.WriteLine($"Минимальное значение: {DoubleBinary.Load()}");
-                    break;
-                case 4:
-
+                    DoubleBinary.SaveFunc(MyFunkF[2], ax, bx, h);
                     break;
                 
             }
+            Console.WriteLine($"Минимальное значение: {DoubleBinary.Load()}");
 
 
-
-
-
-
-            //SaveFunc("data.bin", -100, 100, 0.5);
-            //Console.WriteLine(Load("data.bin"));
-            //Console.ReadKey();
-
-
-
+            
 
 
 
