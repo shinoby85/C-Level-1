@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace Lesson_7
 {
-    public partial class Form1 : Form
+    public partial class startForm : Form
     {
-        public Form1()
+        public startForm()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnQuite_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnWork1_Click(object sender, EventArgs e)
+        {
+            formUdvoitel f2 = new formUdvoitel();
+            f2.Show();
         }
     }
 }
