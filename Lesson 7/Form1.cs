@@ -28,5 +28,11 @@ namespace Lesson_7
             formUdvoitel f2 = new formUdvoitel();
             f2.Show();
         }
+
+        private void btnWork2_Click(object sender, EventArgs e)
+        {
+            SerchNumber f3 = new SerchNumber();
+            f3.Show();
+        }
     }
 }

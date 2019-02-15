@@ -38,8 +38,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.игратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbStatus.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -138,23 +138,23 @@
             // игратьToolStripMenuItem
             // 
             this.игратьToolStripMenuItem.Name = "игратьToolStripMenuItem";
-            this.игратьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.игратьToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.игратьToolStripMenuItem.Text = "Играть";
             this.игратьToolStripMenuItem.Click += new System.EventHandler(this.игратьToolStripMenuItem_Click);
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // btnReset
             // 
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(180, 22);
+            this.btnReset.Size = new System.Drawing.Size(112, 22);
             this.btnReset.Text = "Сброс";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // formUdvoitel
             // 
@@ -167,6 +167,7 @@
             this.Controls.Add(this.btnCommand2);
             this.Controls.Add(this.btnCommand1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formUdvoitel";
             this.Text = "Удвоитель";

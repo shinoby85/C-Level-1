@@ -51,6 +51,7 @@
             this.btnWork2.TabIndex = 0;
             this.btnWork2.Text = "Угадай число";
             this.btnWork2.UseVisualStyleBackColor = true;
+            this.btnWork2.Click += new System.EventHandler(this.btnWork2_Click);
             // 
             // btnQuite
             // 
@@ -70,6 +71,7 @@
             this.Controls.Add(this.btnQuite);
             this.Controls.Add(this.btnWork2);
             this.Controls.Add(this.btnWork1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "startForm";
             this.Text = "Стартовое окно заданий";
             this.ResumeLayout(false);
