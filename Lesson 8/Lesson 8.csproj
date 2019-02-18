@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BelieveOrNotBelieve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BelieveOrNotBelieve.Designer.cs">
+      <DependentUpon>BelieveOrNotBelieve.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZ2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BelieveOrNotBelieve.resx">
+      <DependentUpon>BelieveOrNotBelieve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormZ2.resx">
       <DependentUpon>FormZ2.cs</DependentUpon>
     </EmbeddedResource>
