@@ -7,8 +7,50 @@ using System.IO;
 
 namespace AnyTasks
 {
+
+    class MassWithConstruct
+    {
+        int[] myMass;
+        public MassWithConstruct()
+        {
+            myMass = new int[1] { 0 };
+        }
+        /// <summary>
+        /// Инициализация массива
+        /// </summary>
+        /// <param name="razm">Размерность массива</param>
+        /// <param name="startNum">Начальное значение чисел</param>
+        /// <param name="step">Шаг для добавляемого числа</param>
+        public MassWithConstruct(int razm, int startNum, int step)
+        {
+            if (razm<=0)
+            {
+                razm = 0;
+            }
+            switch (razm)
+            {
+                case 0:
+                    myMass = new int[1] { 0 }; break;
+                case 1:
+                    myMass = new int[1] {startNum}; break;
+                default:
+                    {
+                        myMass = new int[razm];
+                        myMass[0] = startNum;
+                        for (int i = 1; i < razm; i++)
+                        {
+                            startNum += step;
+                            myMass[i] = startNum;
+                        }
+                        break;
+                    }
+            }
+            
+        }
+    }
+
     static class StaticClass
-    {       
+    {
         /// <summary>
         /// Выводит данные массива на консоль
         /// </summary>
