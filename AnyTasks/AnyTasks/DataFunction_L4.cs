@@ -10,10 +10,24 @@ namespace AnyTasks
 
     class MassWithConstruct
     {
-        int[] myMass;
+        static int[] myMass;
         public MassWithConstruct()
         {
             myMass = new int[1] { 0 };
+        }
+        /// <summary>
+        /// Рандомное заполнение массива целыми числами в промежутке от -10 до 10
+        /// </summary>
+        /// <param name="razm">Размерность массива</param>
+        public MassWithConstruct(int razm)
+        {
+            razm = razm <= 0 ? 1 : razm;
+            myMass = new int[razm];
+            Random rnd = new Random();
+            for (int i = 0; i < myMass.Length; i++)
+            {
+                myMass[i] = rnd.Next(-10, 10);
+            }
         }
         /// <summary>
         /// Инициализация массива
@@ -25,12 +39,10 @@ namespace AnyTasks
         {
             if (razm<=0)
             {
-                razm = 0;
+                razm = 1;
             }
             switch (razm)
-            {
-                case 0:
-                    myMass = new int[1] { 0 }; break;
+            {                
                 case 1:
                     myMass = new int[1] {startNum}; break;
                 default:
@@ -47,6 +59,104 @@ namespace AnyTasks
             }
             
         }
+        /// <summary>
+        /// Возврат из функции массива
+        /// </summary>
+        /// <returns>Возвращаемое значение</returns>
+        public int[] Output
+        {
+            get
+            {
+                return myMass;
+            }
+        }
+        /// <summary>
+        /// Возвращает сумму всех элементов массива
+        /// </summary>
+        public int Sum
+        {
+            get
+            {
+                int sum = 0;
+                for (int i = 0; i < myMass.Length; i++)
+                {
+                    sum += myMass[i];
+                }
+                return sum;
+            }
+        }
+        /// <summary>
+        /// Возвращает инвертированный массив
+        /// </summary>
+        /// <returns></returns>
+        public int[] Inverse()
+        {
+            int[] invMass = new int[myMass.Length];
+            for (int i = 0; i < invMass.Length; i++)
+            {
+                invMass[i] =myMass[i] *(-1);
+            }
+            return invMass;
+        }
+        /// <summary>
+        /// Умножает каждый элемент массива на число
+        /// </summary>
+        /// <param name="num">Множитель</param>
+        public void Multi(int num)
+        {
+            for (int i = 0; i < myMass.Length; i++)
+            {
+                myMass[i] *= num;
+            }
+        }
+        /// <summary>
+        /// Поиск количества максимальных элементов
+        /// </summary>
+        public int MaxCount
+        {
+            get
+            {
+                int maxSearch = myMass[0];               
+                int count = 1;
+                foreach (var item in myMass)
+                {
+                    count=item > maxSearch ? 1 :count++;
+                    maxSearch = item > maxSearch ? item:maxSearch;
+                }
+                return count;
+            }
+        }
+        /// <summary>
+        /// Формирует библиотеку вхождений
+        /// </summary>
+        public Dictionary<int,int> DataLibruary
+        {
+            get
+            {
+                int[] sortMass = new int[myMass.Length];
+                for (int i = 0; i < myMass.Length; i++)
+                {
+                    sortMass[i] = myMass[i];
+                }
+                Array.Sort(sortMass);
+                Dictionary<int, int> myLibruary=new Dictionary<int, int>();
+                int count = 0, elem = sortMass[0];
+                for (int i = 0; i < sortMass.Length; i++)
+                {
+                    if (elem!=sortMass[i])
+                    {
+                        myLibruary.Add(elem, count);
+                        count = 0;
+                        elem = sortMass[i];
+                    }
+                    count++;
+                    
+                }
+                myLibruary.Add(elem, count);
+                return myLibruary;
+            }
+        }
+
     }
 
     static class StaticClass
@@ -114,7 +224,7 @@ namespace AnyTasks
         }
     }
 
-    class DataFunction
+    class DataFunction_L4
     {
         /// <summary>
         /// Заполняет массив случайными числами в указанном промежутке
@@ -136,7 +246,7 @@ namespace AnyTasks
         /// <param name="mas">Передаваемый массив</param>
         void OutputMass(int[] mas)
         {
-            Console.Write("Вид массива: ");
+            Console.Write("\nВид массива: ");
             for (int i = 0; i < mas.Length; i++)
             {
                 Console.Write($"{mas[i]} ");
@@ -172,7 +282,7 @@ namespace AnyTasks
             RndMass(myMass, min, max);
             OutputMass(myMass);
             Console.WriteLine($"\nКоличество найденных пар: {PairNumber(myMass,3)}");            
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         /// <summary>
@@ -181,12 +291,34 @@ namespace AnyTasks
         public void Task_4_2()
         {
             StaticClass.LTask41("mass.txt");
-            Console.ReadKey();
+            //Console.ReadKey();
         }
       
         public void Task_4_3()
         {
-
+            MassWithConstruct T43 = new MassWithConstruct(12, -14, 7);
+            OutputMass(T43.Output);
+            Console.WriteLine($"\nСумма всех элементов масиива: {T43.Sum}.");
+            OutputMass(T43.Inverse());
+            Console.Write("\nУкажите множитель для массива:");
+            int mnoj;
+            if (int.TryParse(Console.ReadLine(),out mnoj))
+            {
+                T43.Multi(mnoj);
+                OutputMass(T43.Output);
+            }
+            else
+            {
+                Console.WriteLine("Введенное значение не является числовым.");
+            }
+            Console.WriteLine($"\nВ массиве найдено {T43.MaxCount} одинаковых максимальных элементов.");
+            MassWithConstruct T43_1 = new MassWithConstruct(25);
+            OutputMass(T43_1.Output);
+            Console.WriteLine("\nВывод элементов и их количества вхождений:");
+            foreach (KeyValuePair<int,int> item in T43_1.DataLibruary)
+            {                            
+                Console.WriteLine($"{item.Key} - {item.Value}");
+            }
         }
 
 
