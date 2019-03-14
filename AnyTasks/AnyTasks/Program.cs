@@ -35,9 +35,11 @@ namespace AnyTasks
              * свойство MaxCount, возвращающее количество максимальных элементов. 
              * б)** Создать библиотеку содержащую класс для работы с массивом. Продемонстрировать работу библиотеки
              * е) *** Подсчитать частоту вхождения каждого элемента в массив (коллекция Dictionary<int,int>)*/
-            DataFunction_L4 T43 = new DataFunction_L4();
-            T43.Task_4_3();
+            //DataFunction_L4 T43 = new DataFunction_L4();
+            //T43.Task_4_3();
 
+            DataFunction_L5 Test = new DataFunction_L5();
+            Test.Tester();
 
 
 
