@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace AnyTasks
 {
    
@@ -38,9 +39,24 @@ namespace AnyTasks
             //DataFunction_L4 T43 = new DataFunction_L4();
             //T43.Task_4_3();
 
-            DataFunction_L5 Test = new DataFunction_L5();
-            Test.Tester();
+            /*Занятие 5.
+             * Задание 2д. Создать метод, который производит частотный анализ текста. В качестве параметра в него 
+             * передается массив слов и текст, в качестве результата метод возвращает сколько раз каждое из слов 
+             * массива входит в этот текст. Здесь требуется использовать класс Dictionary. */
+            //DataFunction_L5 T52d = new DataFunction_L5();
+            //T52d.Task_5_2d();
 
+            /*Задание 3. Для двух строк написать метод, определяющий, является ли одна строка перестановкой другой.
+             * Например: badc являются перестановкой abcd.*/
+            //DataFunction_L5 T53 = new DataFunction_L5();
+            //T53.Task_5_3();
+
+            /* Задание 4. Задача ЕГЭ.*/
+            //DataFunction_L5 T54 = new DataFunction_L5();
+            //T54.Task_5_4();
+
+            /*Занятие 6.
+             * Задание .*/
 
 
 
