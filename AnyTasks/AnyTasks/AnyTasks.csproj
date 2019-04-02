@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="DataFunction_L4.cs" />
     <Compile Include="DataFunction_L5.cs" />
+    <Compile Include="DataFunction_L6.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
