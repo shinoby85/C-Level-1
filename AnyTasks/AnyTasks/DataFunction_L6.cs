@@ -15,7 +15,7 @@ namespace AnyTasks
         public string department;
         public int group;
         public string city;
-        int age;
+        public int age;
         // Создаем конструктор
         /// <summary>
         /// Конструктор
@@ -42,6 +42,22 @@ namespace AnyTasks
             this.city = city;
         }
     }
+    class sortAge : IComparer<Student>
+    {
+        public int Compare(Student o1,Student o2)
+        {
+            if (o1.age>o2.age)
+            {
+                return 1;
+            }
+            else if (o1.age < o2.age)
+            {
+                return -1;
+            }
+            return 0;
+        }
+    }
+
 
 
     class DataFunction_L6
@@ -90,8 +106,12 @@ namespace AnyTasks
             {
                 Console.WriteLine($"На {i+1} курсе - {ageStudent[i],5} человек.");
             }
-             
-
+            sortAge age = new sortAge();
+            list.Sort(age);
+            foreach (var item in list)
+            {
+                Console.WriteLine($"ФИО: {item.firstName} {item.lastName}. Возраст: {item.age} лет. Факультет: {item.faculty}");
+            }
 
 
             /*list.Sort(new Comparison<Student>(MyDelegat));
