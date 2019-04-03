@@ -86,13 +86,11 @@ namespace AnyTasks
             sr.Close();
             Console.WriteLine($"Количество учащихся на 5 и 6 курсах составляет {courseStudent} человек.");
             Console.WriteLine("Количество студентов в возрасте от 18 до 20 лет на курсах составляет:");
-            int i = 1;
-            foreach (var studentItems in ageStudent)
+            for (int i = 0; i < ageStudent.Length; i++)
             {
-                
-                Console.WriteLine($"На {i} курсе - {studentItems,5} человек.");
-                i++;
+                Console.WriteLine($"На {i+1} курсе - {ageStudent[i],5} человек.");
             }
+             
 
 
 
